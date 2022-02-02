@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/2.jpg'%}" />
+    <title>The Only Way</title>
+
+    <!-- css file link -->
+    {% comment %} <link rel="stylesheet" href="{% static '/quiz.css'%}"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/quiz.css'%}">
+    <link rel="stylesheet" href="{% static 'css/reset.min.css' %}" />
+    <link rel="stylesheet" href="{%static 'css/style_nav.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/header-1.css' %}" /> 
+</head>
+<body>
+
+<th>
+     <div>
+        <!-- Header Start -->
+        <header class="site-header">
+            <div class="wrapper site-header__wrapper">
+              <a href="/">
+                <img style="margin-top: -8px; margin-right:0px;" src="{% static 'images/1.jpg'%}" alt="logo">
+              </a>
+              
+
+
+             
+              
+              <nav class="nav">
+                <button class="nav__toggle" aria-expanded="false" type="button">
+                  menu
+                </button>
+                <ul class="nav__wrapper">
+                  {% if user.is_authenticated %}
+                  <li class="nav__item"><a href="/logoutUser">Logout</a></li>
+                  {% else %}
+                  <li class="nav__item"><a href="/loginUser">Login</a></li>
+                  <li class="nav__item"><a href="/signup">Signup</a></li>
+                  {% endif %}
+                  
+                  
+                  <li class="nav__item"><a href="service">About us</a></li>
+                  <li class="nav__item"><a href="contact">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+          </header>
+          <!-- Header End -->
+    </div> 
+  </th>
+  
+
+
+    {% comment %} <img src="{% static 'todo/images/dov1e.png' %}" alt="img" id="img" class="img" width="100" height="100"> {% endcomment %}
+    <h1 id="title">Today's Quiz</h1>
+
+    <!-- quiz-container -->
+    <div id="quiz-container">
+        <!-- question container -->
+        <div class="questions">
+            <h2 id="question"></h2>
+            <ol type="A">
+                <li style="padding:0.5rem" class="option"><span id="option0" onclick="calcScore(this)"></span></li>
+                <li style="padding:0.5rem" class="option"><span id="option1" onclick="calcScore(this)"></span></li>
+                <li style="padding:0.5rem" class="option"><span id="option2" onclick="calcScore(this)"></span></li>
+                <li style="padding:0.5rem" class="option"><span id="option3" onclick="calcScore(this)"></span></li>
+            </ol>
+            <h4 id="stat"></h4>
+        </div>
+
+        <div class="buttons">
+            <button type="button" class="next">Next</button>
+        </div>
+
+    </div>
+
+    <!-- scoreboard section -->
+    <div id="scoreboard">
+        <img src="{% static 'todo/images/dov1e.png' %}" alt="" width="100" height="100">
+        <h2 id="score-title">Your Score</h2>
+        <h2 id="score"></h2>
+        <button type="button" id="score-btn" onclick="backToQuiz()">Back to Quiz</button>
+        <button type="button" id="check-answer" onclick="checkAnswer()">Check Answers</button>
+    </div>
+
+    <!-- answers section -->
+    <div id="answerBank">
+        <h2>Answers :</h2>
+        <ol type="1" id="answers">
+
+        </ol>
+        <button type="button" id="score-btn" onclick="backToQuiz()">Back to Quiz</button>
+    </div>
+
+    <!-- javascript file source -->
+    <script>var question_Bank = {% autoescape off %}{{ ques }}{% endautoescape %};</script>
+    <script src="{%static 'js\quiz.js'%}"></script>
+
+</body>
+</html>

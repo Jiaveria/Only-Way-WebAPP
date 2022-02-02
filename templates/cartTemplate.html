@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <link rel="icon" type="image/x-icon" href="{% static 'images/2.jpg'%}" />
+        <title>The Only Way</title>
+        <!-- Favicon-->
+        
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'islamoshop/css/styles.css' %}" rel="stylesheet" />
+        <link href="{% static 'islamoshop/css/cart.css' %}" rel="stylesheet" />
+
+    </head>
+
+    <body>
+        {% for message in messages %}
+        <!-- <div class="container-fluid p-0 mb-0"> -->
+        <div class="alert {{ message.tags }} alert-dismissible mb-0 fade show" role="alert">
+            {{ message }}
+            <span style="position: absolute; right: 0;" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span></span>
+        </div>
+        <!-- </div> -->
+        {% endfor %}
+
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="container px-4 px-lg-5">
+
+    <a class="navbar-brand" href="/"><b>The Only Way</b></a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+            class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!"></a></li>
+            <li class="nav-item"><a class="nav-link " href="/market">Islamoshop</a></li>
+            <!-- <li class="nav-item"><a class="nav-link" href="single_blog">Blog   </a></li>
+                        <li class="nav-item"><a class="nav-link" href="quiz">Quiz  </a></li> -->
+
+        </ul>
+        <a class="btn btn-outline-dark" href="/cartPage">
+            <i class="bi-cart-fill me-1"></i>
+            Cart
+            <span class="badge bg-dark text-white ms-1 rounded-pill"></span>
+        </a>
+
+        <a class="btn btn-outline-dark mx-1" href="/logoutUser">
+
+            Logout
+            <span class="badge bg-dark text-white ms-1 rounded-pill"></span>
+        </a>
+    </div>
+</div>
+        </nav>
+        <!-- Header-->
+        
+        <header class="py-5 headerbg ">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">Ismaloshop</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">We provide you with the best</p>
+                </div>
+            </div>
+        </header>
+        <!-- Section-->
+    <section class="h-100" style="background-color: #d2c9ff; ">
+            <form action='cartPage' method='POST'>
+                {% csrf_token %}
+            <div class="container py-5 h-100" >
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12" >
+                        <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+                            <div class="card-body p-0">
+                                <div class="row g-0">
+                                    <div class="col-lg-8">
+                                        <div class="p-5">
+                                            <div class="d-flex justify-content-between align-items-center mb-5">
+                                                <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
+                                                <h6 class="mb-0 text-muted">{{totalObjects}} Items</h6>
+                                            </div>
+                                            <hr class="my-4">
+                                            {% for itemObject in cartObjectList %}
+        
+                                            <div class="row mb-4 d-flex justify-content-between align-items-center">
+
+                                                <div class="col-md-2 col-lg-2 col-xl-2">
+                                                    <img src="{% static 'islamoshop/images/'|add:itemObject.item.name|lower|add:'.jpg' %}"
+                                                        class="img-fluid rounded-3" alt="Cotton T-shirt">
+                                                </div>
+                                                <div class="col-md-3 col-lg-3 col-xl-3">
+                                                    <!-- <h6 class="text-muted">{{itemObject.item.name}}</h6> -->
+                                                    <h6 class="text-black mb-0">{{itemObject.item.name}}</h6>
+                                                </div>
+                                                <div class="col-md-3 col-lg-3 col-xl-2 d-flex px-auto">
+                                                    <!-- <button class="btn btn-link px-2" style="text-decoration: none; font-size: x-large;" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">-
+                                                        <i class="fas fa-minus"></i>
+                                                    </button> -->
+                                                    
+                                                    <input id="{{ itemObject.item.id }}" min="1" max="{{itemObject.item.quantity}}" name="{{ itemObject.item.id }}" value="{{ itemObject.itemQuantity }}" type="number" 
+                                                    class="form-control form-control-sm" style="max-width: 3rem" onblur="maxItems();totalPriceOfCart();"/>
+                                                    
+                                                    <!-- <button class="btn btn-link px-2" style="text-decoration: none; font-size: x-large;" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">+
+                                                        <i class="fas fa-plus"></i>
+                                                    </button> -->
+                                                </div>
+                                                <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                                    <h6 class="mb-0">${{itemObject.item.price}}</h6>
+                                                </div>
+                                                <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                                                    <a style="text-decoration: none;" href="{{ itemObject.item.get_remove_from_cart_url }}" class="text-black mb-0"><i class="fas fa-times">x</i></a>
+                                                </div>
+                                            </div>
+        
+                                            <hr class="my-4">
+
+                                            {% endfor %}
+
+        
+                                            <div class="pt-5">
+                                                <h6 class="mb-0"><a href="#!" class="text-body"><i
+                                                            class="fas fa-long-arrow-alt-left me-2"></i>Back to shop</a></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 bg-grey">
+                                        <div class="p-5">
+                                            <h3 class="fw-bold mb-5 mt-2 pt-1">Summary</h3>
+                                            <hr class="my-4">
+        
+                                            <div class="d-flex justify-content-between mb-4">
+                                                <h5 class="text-uppercase">items {{totalObjects}}</h5>
+                                                <h5 id="boht"></h5>
+                                            </div>
+        
+                                            <h5 class="text-uppercase mb-3">Shipping</h5>
+        
+                                            <div class="mb-4 pb-2">
+                                                <select class="select">
+                                                    <option value="1">Standard-Delivery- $5.00</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                    <option value="4">Four</option>
+                                                </select>
+                                            </div>
+        
+                                            <h5 class="text-uppercase mb-3">Give code</h5>
+        
+                                            <div class="mb-5">
+                                                <div class="form-outline">
+                                                    <input type="text" id="form3Examplea2"
+                                                        class="form-control form-control-lg" />
+                                                    <label class="form-label" for="form3Examplea2">Enter your code</label>
+                                                </div>
+                                            </div>
+        
+                                            <hr class="my-4">
+        
+                                            <div class="d-flex justify-content-between mb-5">
+                                                <h5 class="text-uppercase">Total price</h5>
+                                                <h5 id="boht1"></h5>
+                                            </div>
+                                                {% if cartObjectList %}
+                                            <button type="submit" class="btn btn-dark btn-block btn-lg"
+                                                data-mdb-ripple-color="dark">Order</button>
+                                                {% else %}
+                                                <button type="submit" class="btn btn-dark btn-block btn-lg"
+                                                 data-mdb-ripple-color="dark" disabled>Order</button>
+                                                {% endif %}
+                                        </form>
+        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+        <!-- Footer-->
+        <footer class="py-5 headerbg pt-5 pb-50"  >
+            <div class="container">
+                <p class="m-0 text-center text-white">Copyright &copy; The Only Way 2022</p>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'islamoshop/js/scripts.js' %}"></script>
+        <script src="{% static 'islamoshop/login/js/jquery.min.js' %}"></script>
+        <script src="{% static 'islamoshop/login/js/popper.js' %}"></script>
+        <script src="{% static 'islamoshop/login/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'islamoshop/login/js/main.js' %}"></script>
+    </body>
+
+</html>
+
+<script>
+function totalPriceOfCart(){
+    var data = JSON.parse("{{cartListForTotalPrice|escapejs}}");
+    var endPrice = 0;
+    for(var x in data){
+        var quantityOfItemInCart = document.getElementById(data[x][0]).value;
+        // console.log( quantityOfItemInCart);
+        endPrice +=data[x][1]*quantityOfItemInCart;
+        // console.log( endPrice);
+    }
+    document.getElementById('boht').innerHTML ="$"+endPrice+".00";
+    document.getElementById('boht1').innerHTML = "$" + endPrice + ".00";
+}
+function maxItems(){
+    var data = JSON.parse("{{cartListForTotalPrice|escapejs}}");
+    for(var x in data){
+         document.getElementById(data[x][0]).oninput = function () {
+            var max = parseInt(this.max);
+            console.log(this.value)
+            console.log(max)
+            if (parseInt(this.value) > max) {
+                this.value = max;
+                console.log(max)
+            }
+            if (parseInt(this.value) == 0) {
+                 this.value = 1;
+                 //console.log(max)
+             }
+        }
+      
+    }
+}
+//maxItems();
+totalPriceOfCart();
+</script>

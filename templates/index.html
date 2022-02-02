@@ -1,0 +1,429 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+{% load static %}
+<html class="no-js"> <!--<![endif]-->
+<head>
+  <link rel="icon" type="image/x-icon" href="{% static 'images/2.jpg'%}" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="Aviato E-Commerce Template">
+  
+  <meta name="author" content="Themefisher.com">
+
+  <title>The Only Way</title>
+ 
+  <!-- Mobile Specific Meta-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Favicon -->
+  <!-- <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.png'%}" /> -->
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css'%}">
+  <!-- Ionic Icon Css -->
+  <link rel="stylesheet" href="{% static 'plugins/Ionicons/css/ionicons.min.css'%}">
+  <!-- animate.css -->
+  <link rel="stylesheet" href="{% static 'plugins/animate-css/animate.css'%}">
+  <!-- Magnify Popup -->
+  <link rel="stylesheet" href="{% static 'plugins/magnific-popup/magnific-popup.css'%}">
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick.css'%}">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{% static 'css/style.css'%}">
+
+  <!-- <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet"> -->
+  
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  
+  <!-- <link rel="stylesheet" href="{% static 'islamoshop/login/css/style.css' %}"> -->
+
+  
+</head>
+
+<body id="body">
+
+<!-- Header Start -->
+<header class="navigation" style="background-color: transparent;min-height: 30%;
+margin: 2px; padding: 0px;">
+	<div class="container" style="background-color: transparent;">
+		<div class="row">
+			<div class="col-md-12">
+				<!-- header Nav Start -->
+
+				<nav class="navbar" style="background-color: white;">
+				
+          <div class="container-fluid">
+            
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href='/'>
+                
+                <img style="margin-top: -8px;" src="{% static 'images/1.jpg'%}" alt="logo">
+
+              
+						</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse py-0" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-right mr-auto">
+                {% if user.is_authenticated %}
+								<li><a href='/logoutUser'>Logout</a></li>
+                {% else %}
+                <li><a href="/loginUser">Login</a></li>
+                <li><a href="/signup">Signup</a></li>
+                {% endif %}
+                <li><a href="/service">About Us</a></li>
+                <li><a href="/contact">Contact</a></li>
+							</ul>
+							</div><!-- /.navbar-collapse -->
+							</div><!-- /.container-fluid -->
+						</nav>
+					</div>
+				</div>
+			</div>
+			</header><!-- header close -->
+
+<!-- Slider Start -->
+<section class="slider">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="block">
+					<h1 class="animated fadeInUp">The Only Way</h1>
+					<p class="animated fadeInUp">A small effort from some of the greatest</br>Computer Systems engineers of all time.</p>
+					<div class="search-bar">
+            <form method="get" action="/search">
+              <input type="text" class="form-control" name="q" id="id_q" placeholder="search...">
+            </form>
+              
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Wrapper Start -->
+<section class="about section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7 col-sm-12">
+				<div class="block">
+					<div class="section-title">
+						<h2>Articles</h2>
+						<p>There is no envy except in two: a person who God has given wealth and he spends it in the right way, and a person whom
+            Allah has given wisdom (ie religious knowledge) and he gives His decisions accordingly and teaches it to the others. "
+            
+            — Sahih al-Bukhari 1409</p>
+					</div>
+					<p>The purpose of writing these articles is to bring the new generation closer 
+            to Islam. As we have seen these days that sins look better than good deeds. It is a big 
+            tragedy that there are only a few practicing Muslim left these days. Although we call ourselves
+            Muslims but Islam is nowhere to be seen within us. These articles are a small effort made by us
+            to convey true picture of Islam with respect to our lives.
+          </p>
+				</div>
+        <a href="single_blog" class="btn btn-view-works" style="background-color:#655E7A ; color: #fff;
+            padding: 10px 20px;">View Articles</a>
+			</div><!-- .col-md-7 close -->
+			<div class="col-md-5 col-sm-12">
+				<div class="block">
+					<img src="{% static 'images/wrapper-img.png'%}" alt="Img">
+				</div>
+			</div><!-- .col-md-5 close -->
+		</div>
+	</div>
+</section>
+
+<section class="feature bg-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-6">
+        <h2 class="section-subtitle">Islamo Shop</h2>
+        <p>There are many superstores and the right word "Super sites" these days where everything is available
+          But there is no website where only Islamic items are available.</p> 
+          <p>The purpose of this site is to provide 
+          ease to the users by bringing almost all available items to one place.
+
+        </p>
+        <a href="/market" class="btn btn-view-works">View Products</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7 col-sm-12">
+        <div class="block">
+          <div class="section-title">
+            <h2>Quiz</h2>
+            <p>If Allah loves a people, then he afflicts them with trials. Whoever is patient has the reward of patience, and whoever
+            is impatient has the fault of impatience. Musnad Aḥmad 23122,</p>
+          </div>
+          <p>The motivation behind quiz application is'nt to take trials of people but to expand the knowledge
+            of people regarding Islam in an innovative way. Most of the questions in the quiz are of general nature.
+            It is a humble opinion to refrain from focusing on increasing marks because as it has been stated earlier
+            the motivation as well as the sole purpose of quiz is to expand the knowledge of people regarding Islam.
+          </p>
+            
+        </div>
+        <a href="quiz" class="btn btn-view-works" style="background-color:#655E7A ; color: #fff;
+            padding: 10px 20px;">Take Quiz</a>
+            <br>
+      </div><!-- .col-md-7 close -->
+      <div class="col-md-5 col-sm-12">
+        <div class="block">
+          <img src="{% static 'images/wrapper-img1.png'%}" alt="Img">
+        </div>
+      </div><!-- .col-md-5 close -->
+    </div>
+  </div>
+</section>
+
+<section class="feature bg-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-6">
+        <h2 class="section-subtitle">Hadith</h2>
+        <p>Hadith contains daily practices of the Prophet (pbuh) these have been passed down via chains of narrators. Ahadith were
+        collected by famous Muhaddiths such as Imam Bukhari and Imam Muslim in their Sahih collections.
+        </p>
+        <p>They verified narrators via very stringent rules, i.e. if a narrator who is known to be unreliable then it would not
+          be
+          taken from that person.
+        </p>
+        <p>Ahadith are a source of legislation for the muslims along with the Quran, Sunnah (found in the ahadith), Consensus
+        (Ijmaa) of the Sahaba (companions) and Qiyas (analogical reasoning of the latter two).
+        </p>
+        
+        <a href="hadith" class="btn btn-view-works">View Hadiths</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7 col-sm-12">
+        <div class="block">
+          <div class="section-title">
+            <h2>Quranic Verses</h2>
+            <p>Read, ˹O Prophet,˺ in the Name of your Lord Who created—created humans from a clinging clot.
+              Read! And your Lord is the Most Generous,Who taught by the pen—taught humanity what they knew not. Surah Al-'Alaq
+            </p>
+          </div>
+          <p>The Noble Quran is the 4th sacred book of Allah Almighty which provides the complete code for the Muslims to live a
+          good, subdued, abundant and rewarding life. Quran is the book of guidance for all mankind following it is the obedience
+          to the commandments of Allah in this life and to gain salvation in the hereafter. It is the scheme of life for every
+          Muslim and also the “constitution” of the Kingdom of Heaven (Allah Almighty) on Earth. </p>
+            <a  href="verse" class="btn btn-view-works" style="background-color:#655E7A ; color: #fff;
+            padding: 10px 20px;">View Quranic Verses</a>
+        </div>
+      </div><!-- .col-md-7 close -->
+      <div class="col-md-5 col-sm-12">
+        <div class="block">
+          <img src="{% static 'images/wrapper-img2.png'%}" alt="Img">
+        </div>
+      </div><!-- .col-md-5 close -->
+    </div>
+  </div>
+</section>
+
+<!-- Service Start -->
+<section class="service">
+  <div class="container">
+    <div class="row">
+      <div class="section-title">
+        <h2>These Days</h2>
+        <p>To give real service you must add something which cannot be bought or measured with money, 
+          <br> and that is sincerity and integrity.</p>
+      </div>
+    </div>
+    <div class="row ">
+      <div class="col-sm-6 col-md-3">
+        <div class="service-item">
+          <i class="icon ion-coffee"></i>
+          <h4>Counselling</h4>
+          <p>Any kinds of opinions and matters are discussed without judging anyone. Feel free to say hello.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="service-item">
+          <i class="ion-compass"></i>
+          <h4>Web Develeopment</h4>
+          <p>Just exploring and getting amused by the vast and fascinating ocean of web application development</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="service-item">
+          <i class="ion-image"></i>
+          <h4>App Development</h4>
+          <p>The application of The Only Way is set to be released soon. Stay tuned for a mind blowing experience</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="service-item">
+          <i class="ion-bug"></i>
+          <h4>Bug Reporting</h4>
+          <p>The application is might contain bugs as it has been coded by humans and not God. So please report them</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Call to action Start -->
+
+
+<!-- Content Start -->
+<section class="testimonial">
+  <div class="container">
+    <div class="row">
+      <div class="section-title text-center">
+        <h2>Some Facts About Us</h2>
+        <p>We have learned by now that our beauty does not count as a possession.<br>The only thing we truly own is our legend.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="block">
+          <ul class="counter-box clearfix">
+            <li>
+              <div class="counter-item">
+                <i class="ion-ios-chatboxes-outline"></i>
+                <h4 class="count" data-count="100">0</h4>
+                <span>Cups Of Coffee</span>
+              </div>
+            </li>
+            <li>
+              <div class="counter-item">
+                <i class="ion-ios-glasses-outline"></i>
+                <h4 class="count" data-count="10">0</h4>
+                <span>Articles Written</span>
+              </div>
+            </li>
+            <li>
+              <div class="counter-item">
+                <i class="ion-ios-compose-outline"></i>
+                <h4 class="count" data-count="8">5</h4>
+                <span>Projects Completed</span>
+              </div>
+            </li>
+            <li>
+              <div class="counter-item">
+                <i class="ion-ios-timer-outline"></i>
+                <h4 class="count" data-count="2">0</h4>
+                <span>Combined Projects</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-5 col-md-offset-1">
+        <div class="testimonial-carousel text-center">
+          <div  class="testimonial-slider owl-carousel">
+            <div>
+              <i class="ion-quote"></i>
+              <p>"Cis ka mustaqbil aap k haathon main hai beta"</p>
+              <div class="user">
+                <img src="{% static 'images/item-img1.png'%}" alt="Pepole">
+                <p><span>Dr Khurram</span> CEO-Paralyzed Chatbot</p>
+              </div>
+            </div>
+            <div>
+              <i class="ion-quote"></i>
+              <p>"Nothing and absolutely nothing is more important than being happy and enjoying life."</p>
+              <div class="user">
+                <img src="{% static 'images/item-img1.png'%}" alt="Pepole">
+                <p><span>Dawood Arshad</span>You know who i am.</p>
+              </div>
+            </div>
+            <div>
+              <i class="ion-quote"></i>
+              <p>"نہ گھبرا کثرتِ غم سے حصول کامیابی میں"</p>
+              <div class="user">
+                <img src="{% static 'images/item-img1.png'%}" alt="Pepole">
+                <p><span>Javeria </span> CEO of this world</p>
+              </div>
+            </div>
+            <div>
+              <i class="ion-quote"></i>
+              <p>"Relax ...."</p>
+              <div class="user">
+                <img src="{% static 'images/item-img1.png'%}" alt="Pepole">
+                <p><span>Sir Kashif</span> CEO-CIS</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- footer Start -->
+<footer class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="footer-manu">
+					<!-- <ul>
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Contact us</a></li>
+						<li><a href="#">Support</a></li>
+						<li><a href="#">Terms</a></li>
+					</ul> -->
+				</div>
+				<p class="copyright">Copyright 2022 &copy; Design & Developed by <a href="/service">Us 😈</a>. All rights reserved.
+					
+					
+			</div>
+		</div>
+	</div>
+</footer>
+
+    <!-- 
+    Essential Scripts
+    =====================================-->
+
+<!-- src="{% static 'images/item-img1.png'%}" -->
+    <!-- Main jQuery -->
+    <script src="{% static 'plugins/jQuery/jquery.min.js'%}"></script>
+    <!-- Bootstrap 3.1 -->
+    <script src="{% static 'plugins/bootstrap/bootstrap.min.js'%}"></script>
+    <!-- slick Carousel -->
+    <script src="{% static 'plugins/slick/slick.min.js'%}"></script>
+    <script src="{% static 'plugins/magnific-popup/jquery.magnific-popup.min.js'%}"></script>
+    <!-- filter -->
+    <script src="{% static 'plugins/shuffle/shuffle.min.js'%}"></script>
+    <script src="{% static 'plugins/SyoTimer/jquery.syotimer.min.js'%}"></script>
+
+    <!-- Form Validator -->
+    <!-- <script src="{% static 'http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js'%}"></script>
+    <script src="{% static 'http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js'%}"></script> -->
+
+    <!-- Google Map -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
+    <script src="plugins/google-map/map.js"></script> -->
+
+    <script src="{% static 'js/script.js'%}"></script>
+
+    <!-- <script src="{% static 'islamoshop/login/js/jquery.min.js' %}"></script> -->
+    <script src="{% static 'islamoshop/login/js/popper.js' %}"></script>
+    <script src="{% static 'islamoshop/login/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'islamoshop/login/js/main.js' %}"></script>
+
+    </body>
+
+    </html>
+   

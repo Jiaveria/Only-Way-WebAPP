@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+{% load static %}
+<html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="Aviato E-Commerce Template">
+  
+  <meta name="author" content="Themefisher.com">
+
+  <title>The Only Way</title>
+
+  <!-- Mobile Specific Meta-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="{% static 'images/2.jpg'%}" />
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+  <!-- Ionic Icon Css -->
+  <link rel="stylesheet" href="{% static 'plugins/Ionicons/css/ionicons.min.css' %}">
+  <!-- animate.css' %} -->
+  <link rel="stylesheet" href="{% static 'plugins/animate-css/animate.css' %}">
+  <!-- Magnify Popup -->
+  <link rel="stylesheet" href="{% static 'plugins/magnific-popup/magnific-popup.css' %}">
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.3.1/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.3.1/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
+  
+
+
+</head>
+
+<body id="body">
+
+<!-- Header Start -->
+<header class="navigation">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<!-- header Nav Start -->
+				<nav class="navbar">
+					<div class="container-fluid">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+								data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="/">
+
+								<img style="margin-top: -17px;" src="{% static  'images/1.jpg' %}" alt="Logo">
+							</a>
+
+						</div>
+
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-right">
+								{% if user.is_authenticated %}
+								<li><a href='/logoutUser'>Logout</a></li>
+								{% else %}
+								<li><a href="/loginUser">Login</a></li>
+								<li><a href="/signup">Signup</a></li>
+								{% endif %}
+								
+								<li><a href="contact">Contact</a></li>
+							</ul>
+
+
+							</ul>
+						</div><!-- /.navbar-collapse -->
+					</div><!-- /.container-fluid -->
+				</nav>
+			</div>
+		</div>
+	</div>
+</header><!-- header close -->
+
+<section class="page-title bg-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block animated fadeInDown">
+          <h1 ><b>Welcome to the Only Way</b></h1>
+          <p>We're grateful you are here</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="service-about section animated fadeInLeft">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+
+				<h2>About Us</h2>
+				<p class="mt-30"><b>The Only Way </b>is a site designed to enrich the viewers' knowledge and appreciation of Islam. Its aim is to provide the viewing substantial knowledge about Islam, particularly the non-Muslim who may need clarification of common distortions of the media and misrepresentations of ill-informed followers.
+					<br>The purpose of this site is to increase the awareness of Muslims and non-Muslims alike about the mission of Islam to warn mankind of God's punishment and to give the good news of their salvation in Islam. Islam is a revealed religion and a way of life that addresses all aspects of the human condition. Here, every effort is made to be as comprehensive as possible and to encompass all aspects of Islam.</br>
+					<br><I>Finally, may Allah grant success to this mission and help make this work sincerely for His sake alone. "And my guidance cannot come except from Allaah, in Him I trust and unto Him I repent." [Quran 11:88]
+					</I></br>	</p>
+			</div>
+			<div class="col-md-6">
+				<img class="img-responsive" src="{% static 'images/company/company-group-pic.jpg' %}">
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="service-arrow">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4 bg-primary">
+				<div class="block">
+					<i class="ion-erlenmeyer-flask"></i>
+					<h3>Our Mission</h3>
+					<p>To enrich the viewers' knowledge and appreciation of Islam and increase the awareness of Muslims and non-Muslims alike about the mission of Islam to warn mankind of God's punishment and to give the good news of their salvation in Islam.</p>
+				</div>
+			</div>
+			<div class="col-md-4 bg-primary bg-primary-dark">
+				<div class="block">
+					<i class="ion-leaf"></i>
+					<h3>Our Vision</h3>
+					<p>Islam is a revealed religion and a way of life that addresses all aspects of the human condition. At the Only Way, every effort is made to be as comprehensive as possible and to encompass all aspects of Islam.</p>
+				</div>
+			</div>
+			<div class="col-md-4 bg-primary bg-primary-darker">
+				<div class="block">
+					<i class="ion-lightbulb"></i>
+					<h3>Our Inspiration</h3>
+					<p>The Prophet (P.B.U.H.) has said, “Seeking knowledge is obligatory on every Muslim.”
+						<br>Gaining Islamic knowledge and teaching it to others is considered one of the best ways to attain success in this life and the next.
+
+					</br>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+<section class="service-list section bg-gray">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="section-title text-center">
+						<h2><i>Here is Our Activities</i></h2>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<div class="block">
+						<h4>Islamic Blogs</h4>
+						<P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</P>
+					
+				</div>
+			</div>
+
+				<div class="col-md-4">
+					<div class="block">
+						<h4>Quranic Verses</h4>
+						<P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</P>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="block">
+						<h4>Ahadith</h4>
+						<P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</P>
+			
+					</div>
+				</div>
+				<div class="col-md-4" >
+					<div class="block">
+						<h4>Islamoshop</h4>
+						<P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</P>
+			
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="block" >
+						<h4>Test your knowledge</h4>
+						<P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</P>
+				
+			</div>
+		</div>
+		
+</section>
+    
+
+
+<section class="call-to-action bg-1 section-sm overly">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="block">
+					<h2>We Provide you with the best.</h2>
+					<p>Read more about what we do and our inspiration. Judge for yourself The work and results <br> we’ve achieved for other clients, and meet our highly experienced Team who just love to inspire.</p>
+					<a class="btn btn-main btn-solid-border" href="#" >Tell Us Your Story</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- footer Start -->
+<footer class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="footer-manu">
+					
+				</div>
+				<p class="copyright">Copyright 2022 &copy; Design & Developed by <a href="/service">Us😈</a>. All rights reserved.
+					</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+    <!-- 
+    Essential Scripts
+    =====================================-->
+
+
+    <!-- Main jQuery -->
+    <script src="{% static 'plugins/jQuery/jquery.min.js' %}"></script>
+    <!-- Bootstrap 3.1 -->
+    <script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
+    <!-- slick Carousel -->
+    <script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+    <script src="{% static 'plugins/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+    <!-- filter -->
+    <script src="{% static 'plugins/shuffle/shuffle.min.js' %}"></script>
+    <script src="{% static 'plugins/SyoTimer/jquery.syotimer.min.js' %}"></script>
+
+    <!-- Form Validator -->
+    <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js' %}"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js' %}"></script> -->
+
+    <!-- Google Map -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
+    <script src="{% static  'plugins/google-map/map.js' %}"></script> -->
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+    </body>
+
+    </html>

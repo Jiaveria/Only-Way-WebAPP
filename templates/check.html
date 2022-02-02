@@ -1,0 +1,49 @@
+{% load static %}
+
+{% block script %}
+<script src="{% static 'js/knowledge.js'%}" defer></script>
+ {% endblock script %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+
+</head>
+<h1> checking if data is fetching correctly from mysql</h1>
+<p>
+{% for post in blogs %}
+{{post.title}}
+{{post.article_meta}}
+{% endfor %}
+</p>
+<body>
+<div class="home-box custom-box">
+    <h3> Instructions:</h3>
+    <p> Totla questions :<span class="total-question">5</span></p>
+    <button type="button" class="btn"> Start Quiz</button>
+</div>
+<div class="quiz-box custom-box">
+    <div class="question-number">
+        question 1 of 5
+    </div>
+    <div class="question-text">
+        Which is 3rd month of islamic calender?
+    </div>
+    <div class="option-container">
+        <div class="option">Rajab</div>
+        <div class="option">rabiUawal</div>
+        <div class="option">zilhajj</div>
+        <div class="option">Ramadan</div>
+    </div>
+    <div class="next-question-btn">
+        <button type="button" class ="btn">Next</button>
+    </div>
+    <div class="answer-indicator">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+</body>
+
+
